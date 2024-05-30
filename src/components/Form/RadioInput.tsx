@@ -5,6 +5,7 @@ import { layoutClass, leftSideClass, rightSideClass } from '../../utils/helpers'
 import LabelName from './LabelName';
 import TextInput from './TextInput';
 import { Option } from './types';
+import FormErrorMessage from '../ErrorMessage/FormErrorMessage';
 
 interface RadioInputProps {
   fieldName: string;
@@ -32,6 +33,7 @@ const RadioInput: React.FC<RadioInputProps> = ({ fieldName, text, options }) => 
     }
   }, [watchField, options]);
 
+  const error = (errors[fieldName] && (errors[fieldName]?.message as string)) || '';
   return (
     <div className={layoutClass}>
       <div className={leftSideClass}>
@@ -53,7 +55,7 @@ const RadioInput: React.FC<RadioInputProps> = ({ fieldName, text, options }) => 
             )}
           </div>
         ))}
-        {errors[fieldName] && <p>{errors[fieldName]?.message as string}</p>}
+        <FormErrorMessage message={error} />
       </div>
     </div>
   );

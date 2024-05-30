@@ -5,7 +5,7 @@ import { MultiSelect } from 'react-multi-select-component';
 import { layoutClass, leftSideClass, rightSideClass } from '../../utils/helpers';
 import LabelName from './LabelName';
 import { Option } from './types';
-import FormErrorMessage from "../ErrorMessage/FormErrorMessage";
+import FormErrorMessage from '../ErrorMessage/FormErrorMessage';
 
 interface MultiSelectInputProps {
   fieldName: string;
@@ -47,7 +47,7 @@ const MultiSelectInput: React.FC<MultiSelectInputProps> = ({
             />
           )}
         />
-        {errors[fieldName] && <FormErrorMessage message={error} />}
+        <FormErrorMessage message={error} />
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const Button: React.FC<props> = ({ name, valid, loading = false }) => {
   };
 
   return (
-    <div className="m-auto float-left">
+    <div className="float-left m-auto">
       <button
         className={`rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 ${
           valid && loading ? 'cursor-not-allowed opacity-50' : ''

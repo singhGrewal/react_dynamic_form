@@ -35,8 +35,8 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ formData, validationSchema, o
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(handleSubmit)}>
           {formData.map(section => (
-            <div key={section.id}>
-              <h3>{section.text}</h3>
+            <div key={section.id} className={'border-b-2 p-4'}>
+              <h3 className={'py-4 text-2xl font-bold'}>{section.text}</h3>
               {section.children.map((child, index) => {
                 const fieldName = `field_${section.id}_${index}`;
                 return <RenderField key={fieldName} child={child} fieldName={fieldName} />;

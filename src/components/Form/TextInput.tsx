@@ -3,6 +3,7 @@ import { useFormContext } from 'react-hook-form';
 
 import { layoutClass, leftSideClass, rightSideClass } from '../../utils/helpers';
 import LabelName from './LabelName';
+import FormErrorMessage from '../ErrorMessage/FormErrorMessage';
 
 interface TextInputProps {
   fieldName: string;
@@ -15,6 +16,7 @@ const TextInput: React.FC<TextInputProps> = ({ fieldName, text, placeholder }) =
     register,
     formState: { errors },
   } = useFormContext();
+  const error = (errors[fieldName] && (errors[fieldName]?.message as string)) || '';
   return (
     <div className={layoutClass}>
       <div className={leftSideClass}>
@@ -27,7 +29,7 @@ const TextInput: React.FC<TextInputProps> = ({ fieldName, text, placeholder }) =
           placeholder={placeholder || 'Please enter '}
           {...register(fieldName)}
         />
-        {errors[fieldName] && <p>{errors[fieldName]?.message as string}</p>}
+        <FormErrorMessage message={error} />
       </div>
     </div>
   );
