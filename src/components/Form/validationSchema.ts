@@ -25,11 +25,11 @@ const generateValidationSchema = (data: FormDataSection[]) => {
 
       if (child.type === 'text') {
         if (child.validate === 'number') {
-          schemaFields[fieldName] = yup.number().required(errorMessage);
+          schemaFields[fieldName] = yup.number().typeError('Must be a number').required(errorMessage).integer('Must be an integer').positive('Must be a positive number');
         } else if (child.validate === 'string') {
-          schemaFields[fieldName] = yup.string().required(errorMessage);
+          schemaFields[fieldName] = yup.string().required(errorMessage).matches(/^[A-Za-z]+$/, 'Only alphabetic characters are allowed').min(3, 'Must be at least 3 characters long').max(20, 'Must be at most 50 characters long');
         } else {
-          schemaFields[fieldName] = yup.string().required(errorMessage);
+          schemaFields[fieldName] = yup.string().email('Must be a valid email').required(errorMessage);
         }
       } else if (child.type === 'dropdown') {
         schemaFields[fieldName] = yup.string().required(errorMessage);
