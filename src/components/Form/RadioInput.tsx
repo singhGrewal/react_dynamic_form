@@ -41,7 +41,7 @@ const RadioInput: React.FC<RadioInputProps> = ({ fieldName, text, options }) => 
         {options.map(option => (
           <div key={option.value}>
             <input
-              className="mr-4 h-4 w-4 appearance-none rounded-full border-2 border-black checked:border-transparent checked:bg-black focus:outline-none dark:border-white dark:checked:bg-white"
+              className="mr-4 h-4 w-4 appearance-none rounded-full border-2 border-black checked:border-transparent checked:bg-black focus:outline-none"
               type="radio"
               id={`${fieldName}_${option.value}`}
               value={option.value}

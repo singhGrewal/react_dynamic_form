@@ -39,4 +39,41 @@ export const data: FormDataSection[] = [
             },
         ],
     },
+    {
+        id: 3,
+        text: 'DropDown',
+        type: 'label',
+        children: [
+            {
+                text: 'What application',
+                type: 'dropdown',
+                options: [
+                    { label: 'SalesMain', value: 'SalesMain' },
+                    { label: 'CSOne', value: 'CSOne' },
+                    { label: 'PXP', value: 'PXP' },
+                    { label: 'Commerce', value: 'Commerce' },
+                    { label: 'Others', value: 'Others' },
+                ],
+            },
+        ],
+    },
+    {
+        id: 4,
+        text: 'Radio Button',
+        type: 'label',
+        children: [
+            {
+                text: 'Radio button with input field if Yes',
+                type: 'radio',
+                options: [
+                    {
+                        label: 'Yes',
+                        value: 'Yes',
+                        condition: { text: 'Please provide additional details', type: 'text' },
+                    },
+                    { label: 'No', value: 'No' },
+                ],
+            },
+        ],
+    },
 ];

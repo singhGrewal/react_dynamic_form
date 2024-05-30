@@ -21,7 +21,8 @@ const generateValidationSchema = (data: FormDataSection[]) => {
   data.forEach(section => {
     section.children.forEach((child, index) => {
       const fieldName = `field_${section.id}_${index}`;
-      const errorMessage = child.errorMessage || `${child.text} is required`;
+      // const errorMessage = child.errorMessage || `${child.text} is required`;
+      const errorMessage = child.errorMessage || 'Is required' ;
 
       if (child.type === 'text') {
         if (child.validate === 'number') {
