@@ -3,7 +3,7 @@ import { FormDataSection } from '../components/Form/types';
 export const data: FormDataSection[] = [
   {
     id: 1,
-    text: 'Heading 1',
+    text: 'Checkbox',
     type: 'label',
     children: [
       {
@@ -48,30 +48,45 @@ export const data: FormDataSection[] = [
         text: 'What application',
         type: 'dropdown',
         options: [
-          { label: 'SalesMain', value: 'SalesMain' },
-          { label: 'CSOne', value: 'CSOne' },
-          { label: 'PXP', value: 'PXP' },
-          { label: 'Commerce', value: 'Commerce' },
-          { label: 'Others', value: 'Others' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 4,
-    text: 'Radio Button',
-    type: 'label',
-    children: [
-      {
-        text: 'Radio button with input field if Yes',
-        type: 'radio',
-        options: [
           {
-            label: 'Yes',
-            value: 'Yes',
-            condition: { text: 'Please provide additional details', type: 'text' },
+            label: 'Story Points Metrics',
+            value: 'storyPointsMetrics',
+            condition: {
+              text: 'Please provide additional details',
+              type: 'dropdown',
+              options: [
+                { label: 'Story Points Per Assignee', value: 'storyPointsPerAssignee' },
+                { label: 'Story Points Per Team', value: 'storyPointsPerTeam' },
+                { label: 'Story Points Per Sprint', value: 'storyPointsPerSprint' },
+              ],
+            },
           },
-          { label: 'No', value: 'No' },
+          { label: 'Story Points by Product Area', value: 'storyPointsProductArea' },
+          { label: 'Story Points by Component Family', value: 'storyPointsComponentFamily' },
+          { label: 'Contribution by Badge Type', value: 'ContributionByBadgeType' },
+
+          {
+            label: 'Test 1',
+            value: 'Test 1',
+            condition: {
+              text: 'Please provide additional details',
+              type: 'dropdown',
+              options: [
+                {
+                  label: 'Test 1_2',
+                  value: 'Test 1_2',
+                },
+                {
+                  label: 'Test 1_3',
+                  value: 'Test 1_3',
+                },
+                {
+                  label: 'Test 1_4',
+                  value: 'Test 1_4',
+                },
+              ],
+            },
+          },
         ],
       },
     ],

@@ -4,6 +4,7 @@ export interface Option {
   condition?: {
     text: string;
     type: string;
+    options?: Option[];
   };
 }
 
